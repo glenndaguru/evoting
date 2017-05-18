@@ -14,15 +14,14 @@
 	} 
 	
 	// Data From App
-	if(isset($_GET["userName"]) != NULL && isset($_GET["userEmail"]) != NULL && isset($_GET["userPassword"]) != NULL && isset($_GET["userNo"]) != NULL)
-	{
-		$userName = $_GET["userName"];
-		$userEmail = $_GET["userEmail"];
-		$userPass = $_GET["userPassword"];
-		$userNo = $_GET["userNo"];
-	}
+	$userName = $_GET["userName"];
+	$userEmail = $_GET["userEmail"];
+	$userPass = $_GET["userPassword"];
+	$userNo = $_GET["userNo"];
+	
 	
 	// Insert Into User Table
+	//$sql = 'INSERT INTO User'.'(userName, userEmail, userPass, userNO)'.'VALUES ("'.$userName.'", "'.$userEmail.'","'.md5($userPass).'","'.$userNo.'")';
 	$sql = 'INSERT INTO User'.'(userName, userEmail, userPass, userNO)'.'VALUES ("'.$userName.'", "'.$userEmail.'","'.md5($userPass).'","'.$userNo.'")';
 	if (!mysqli_query($conn, $sql)) 
 	{
