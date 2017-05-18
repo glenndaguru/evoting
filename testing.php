@@ -13,7 +13,7 @@
 	$userNo = "0128004527";
 
 	// Create connection
-	$conn = new mysqli($servername, $username, $password);
+	$conn = new mysqli($servername, $username, $password, $dbname);
 	
 	
 	if ($conn->connect_error) 
@@ -22,7 +22,6 @@
 	} 
 	
 	$sql = 'INSERT INTO User'.'(userName, userEmail, userPass, userNO)'.'VALUES ("'.$userName.'", "'.$userEmail.'","'.md5($user_passwordhash).'","'.$userNo.'")';
-	mysqli_select_db($dbname,$conn);
 	if (!mysqli_query($conn, $sql)) 
 	{
 		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
