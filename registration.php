@@ -1,21 +1,37 @@
 <?php
-	include(dbConnection.php);
+	// Connection
+	$servername = "127.4.48.2";
+	$username = "adminD35M7Lk";
+	$password = "M1iBd32D8Hdt";
+	$dbname = "crimereporter";
 	
+	// Data From App
 	$userName = isset($_GET["userName"]);
 	$userEmail = isset($_GET["userEmail"]);
 	$userPass = isset($_GET["userPassword"]);
 	$userNo = isset($_GET["userNo"]);
-	$myObj->result = "User succesfully registered";
-	$myJobj = json_encode($myObj);
+		
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
 	
-	$sql = "INSERT INTO User (userName, userEmail, userPass, userNO) VALUES ('$userName', '$userEmail', '".md5($user_passwordhash)."','$userNo')";
-	if (!mysqli_query($the_connection, $sql)) 
+	if ($conn->connect_error) 
 	{
-		echo "Error: " . $sql . "<br>" . mysqli_error($the_connection);
+		die("Connection failed: " . $conn->connect_error);
+	} 
+	
+	// Insert Into User Table
+	$sql = 'INSERT INTO User'.'(userName, userEmail, userPass, userNO)'.'VALUES ("'.$userName.'", "'.$userEmail.'","'.md5($userPass).'","'.$userNo.'")';
+	if (!mysqli_query($conn, $sql)) 
+	{
+		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 	}
 	else
 	{
-		echo $myJobj;
+		$myObj->result = "User succesfully registered";
 	}
 	
+	$myJobj = json_encode($myObj);
+	echo $myJobj."\n";
+	
+	mysqli_close($conn);
 ?>
