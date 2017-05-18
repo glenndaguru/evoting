@@ -6,18 +6,18 @@
 	$dbname = "crimereporter";
 	
 	// Data From App
-	$userEmail = isset($_GET["userEmail"]);
-	$userPass = isset($_GET["userPassword"]);
-	$userNo = isset($_GET["userNo"]);
-	$userLati= isset($_GET["lati"]);
-	$userLongi= isset($_GET["longi"]);
-	$crimeType= isset($_GET["type"]);
-	$crimeDesc= isset($_GET["desc"]);
-	$crimeImg= isset($_GET["img"]);
-	$ansa1 = isset($_GET["ansa1"]);
-	$ansa2 = isset($_GET["ansa2"]);
-	$ansa3 = isset($_GET["ansa3"]);
-	$ansa4 = isset($_GET["ansa4"]);
+	$userEmail = $_POST(["userEmail"];
+	$userPass = $_POST(["userPassword"];
+	$userNo = $_POST(["userNo"];
+	$userLati= $_POST(["lati"];
+	$userLongi= $_POST(["longi"];
+	$crimeType= $_POST(["type"];
+	$crimeDesc= $_POST(["desc"];
+	$crimeImg= $_POST["img"];
+	$ansa1 = $_POST["ansa1"];
+	$ansa2 = $_POST["ansa2"];
+	$ansa3 = $_POST["ansa3"];
+	$ansa4 = $_POST["ansa4"];
 	$userID = "";
 	
 	// Create connection

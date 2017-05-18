@@ -6,8 +6,8 @@
 	$dbname = "crimereporter";
 	
 	// Data From App
-	$userEmail = isset($_GET["userEmail"]);
-	$userPass = isset($_GET["userPassword"]);
+	$userEmail = $_POST["userEmail"];
+	$userPass = $_POST["userPassword"];
 	
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
