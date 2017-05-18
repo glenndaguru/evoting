@@ -1,13 +1,13 @@
 <?php
+	// Data From App
+	$userEmail = $_POST["userEmail"];
+	$userPass = $_POST["userPassword"];
+	
 	// Connection
 	$servername = "127.4.48.2";
 	$username = "adminD35M7Lk";
 	$password = "M1iBd32D8Hdt";
 	$dbname = "crimereporter";
-	
-	// Data From App
-	$userEmail = $_POST["userEmail"];
-	$userPass = $_POST["userPassword"];
 	
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
