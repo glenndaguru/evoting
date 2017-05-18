@@ -6,10 +6,10 @@
 	$dbname = "crimereporter";
 	
 	// Data From App
-	$userName = isset($_GET["userName"]);
-	$userEmail = isset($_GET["userEmail"]);
-	$userPass = isset($_GET["userPassword"]);
-	$userNo = isset($_GET["userNo"]);
+	$userName = $_GET["userName"];
+	$userEmail = $_GET["userEmail"];
+	$userPass = $_GET["userPassword"];
+	$userNo = $_GET["userNo"];
 		
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
