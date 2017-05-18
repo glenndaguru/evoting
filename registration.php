@@ -14,10 +14,10 @@
 	} 
 	
 	// Data From App
-	$userName = $_POST["userName"];
-	$userEmail = $_POST["userEmail"];
-	$userPass = $_POST["userPassword"];
-	$userNo = $_POST["userNo"];
+	$userName = $_GET["userName"];
+	$userEmail = $_GET["userEmail"];
+	$userPass = $_GET["userPassword"];
+	$userNo = $_GET["userNo"];
 	
 	$myObj->result = $userName;
 	echo $myJobj;
