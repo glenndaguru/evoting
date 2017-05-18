@@ -1,6 +1,5 @@
 <?php
-	include(dbConnection.php);
-	
+
 	// Connection
 	$servername = "127.4.48.2";
 	$username = "adminD35M7Lk";
@@ -15,7 +14,7 @@
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password);
-	mysqli_select_db($dbname,$conn);
+	mysqli_select_db($dbname);
 	
 	if ($conn->connect_error) 
 	{
@@ -33,7 +32,7 @@
 	}
 	
 	$myJobj = json_encode($myObj);
-	echo $myJobj;
+	echo $myJobj."\n";
 	
 	mysqli_close($conn);
 	
