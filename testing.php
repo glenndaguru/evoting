@@ -14,7 +14,7 @@
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password);
-	mysqli_select_db($dbname);
+	
 	
 	if ($conn->connect_error) 
 	{
@@ -22,6 +22,7 @@
 	} 
 	
 	$sql = 'INSERT INTO User'.'(userName, userEmail, userPass, userNO)'.'VALUES ("'.$userName.'", "'.$userEmail.'","'.md5($user_passwordhash).'","'.$userNo.'")';
+	mysqli_select_db($dbname,$conn);
 	if (!mysqli_query($conn, $sql)) 
 	{
 		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
