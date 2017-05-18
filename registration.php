@@ -1,9 +1,9 @@
 <?php
 	// Data From App
-	$userName = $_GET["userName"];
-	$userEmail = $_GET["userEmail"];
-	$userPass = $_GET["userPassword"];
-	$userNo = $_GET["userNo"];
+	$userName = $_POST["userName"];
+	$userEmail = $_POST["userEmail"];
+	$userPass = $_POST["userPassword"];
+	$userNo = $_POST["userNo"];
 
 	// Connection
 	$servername = "127.4.48.2";
