@@ -1,10 +1,10 @@
 <?php
 	include(dbConnection.php);
 	
-	$userName = isset($_GET["userName"]);
-	$userEmail = isset($_GET["userEmail"]);
-	$userPass = isset($_GET["userPassword"]);
-	$userNo = isset($_GET["userNo"]);
+	$userName = "Noise";
+	$userEmail = "Noise@gmail.com";
+	$userPass = "Noise";
+	$userNo = "0128004527";
 	$myObj->result = "User succesfully registered";
 	$myJobj = json_encode($myObj);
 	
