@@ -1,4 +1,10 @@
 <?php
+	// Data From App
+	$userName = $_GET["userName"];
+	$userEmail = $_GET["userEmail"];
+	$userPass = $_GET["userPassword"];
+	$userNo = $_GET["userNo"];
+
 	// Connection
 	$servername = "127.4.48.2";
 	$username = "adminD35M7Lk";
@@ -13,18 +19,7 @@
 		die("Connection failed: " . $conn->connect_error);
 	} 
 	
-	// Data From App
-	$userName = $_GET["userName"];
-	$userEmail = $_GET["userEmail"];
-	$userPass = $_GET["userPassword"];
-	$userNo = $_GET["userNo"];
-	
-	$myObj->result = $userName;
-	echo $myJobj;
-	
-	/*
 	// Insert Into User Table
-	//$sql = 'INSERT INTO User'.'(userName, userEmail, userPass, userNO)'.'VALUES ("'.$userName.'", "'.$userEmail.'","'.md5($userPass).'","'.$userNo.'")';
 	$sql = 'INSERT INTO User'.'(userName, userEmail, userPass, userNO)'.'VALUES ("'.$userName.'", "'.$userEmail.'","'.md5($userPass).'","'.$userNo.'")';
 	if (!mysqli_query($conn, $sql)) 
 	{
@@ -36,7 +31,7 @@
 	}
 	
 	$myJobj = json_encode($myObj);
-	echo $myJobj."\n";*/
+	echo $myJobj."\n";
 	
 	mysqli_close($conn);
 ?>
