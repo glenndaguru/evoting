@@ -14,12 +14,15 @@
 	} 
 	
 	// Data From App
-	$userName = $_GET["userName"];
-	$userEmail = $_GET["userEmail"];
-	$userPass = $_GET["userPassword"];
-	$userNo = $_GET["userNo"];
+	$userName = $_POST["userName"];
+	$userEmail = $_POST["userEmail"];
+	$userPass = $_POST["userPassword"];
+	$userNo = $_POST["userNo"];
 	
+	$myObj->result = $userName;
+	echo $myJobj;
 	
+	/*
 	// Insert Into User Table
 	//$sql = 'INSERT INTO User'.'(userName, userEmail, userPass, userNO)'.'VALUES ("'.$userName.'", "'.$userEmail.'","'.md5($userPass).'","'.$userNo.'")';
 	$sql = 'INSERT INTO User'.'(userName, userEmail, userPass, userNO)'.'VALUES ("'.$userName.'", "'.$userEmail.'","'.md5($userPass).'","'.$userNo.'")';
@@ -33,7 +36,7 @@
 	}
 	
 	$myJobj = json_encode($myObj);
-	echo $myJobj."\n";
+	echo $myJobj."\n";*/
 	
 	mysqli_close($conn);
 ?>
