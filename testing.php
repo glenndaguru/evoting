@@ -17,6 +17,12 @@
 	$conn = new mysqli($servername, $username, $password);
 	mysqli_select_db($dbname,$conn);
 	
+	if ($conn->connect_error) 
+	{
+		die("Connection failed: " . $conn->connect_error);
+	} 
+	echo "Connected successfully";
+	/*
 	$sql = "INSERT INTO User (userName, userEmail, userPass, userNO) VALUES ('".$userName."', '".$userEmail."', '".md5($user_passwordhash)."','".$userNo."')";
 	if (!mysqli_query($conn, $sql)) 
 	{
@@ -26,7 +32,7 @@
 	{
 		echo $myJobj;
 	}
-	
+	*/
 	mysqli_close($conn);
 	
 ?>
