@@ -8,8 +8,17 @@
 	$myObj->result = "User succesfully registered";
 	$myJobj = json_encode($myObj);
 	
-	$sql = "INSERT INTO User (userName, userEmail, userPass, userNO) VALUES ($userName, $userEmail, md5($user_passwordhash),$userNo)";
-	if (!mysqli_query($the_connection, $sql)) 
+	$servername = "127.4.48.2";
+	$username = "adminD35M7Lk";
+	$password = "M1iBd32D8Hdt";
+	$dbname = "crimereporter";
+
+	// Create connection
+	$conn = new mysqli($servername, $username, $password);
+	mysqli_select_db($dbname,$conn);
+	
+	$sql = "INSERT INTO User (userName, userEmail, userPass, userNO) VALUES ('$userName', '$userEmail', '".md5($user_passwordhash)."','$userNo')";
+	if (!mysqli_query($conn, $sql)) 
 	{
 		echo "Error: " . $sql . "<br>" . mysqli_error($the_connection);
 	}
@@ -17,5 +26,7 @@
 	{
 		echo $myJobj;
 	}
+	
+	mysqli_close($conn);
 	
 ?>
