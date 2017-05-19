@@ -10,7 +10,6 @@
 	// Data From App
 	$userEmail = $_POST["userEmail"];
 	$userPass = $_POST["userPassword"];
-	$userNo = "0128004527";//$_POST["userNo"];
 	$userLati= $_POST["lati"];
 	$userLongi= $_POST["longi"];
 	$crimeType= $_POST["type"];
@@ -33,11 +32,13 @@
 	//Fetch User ID
 	$sql = "SELECT * FROM User WHERE userEmail='".$userEmail."' AND userPass='".$userPass."'";
 	$result = mysqli_query($conn,$sql) or die("Error in $sql:" . mysqli_error($conn));
-	while($row = mysqli_fetch_object($result))
+	if (mysqli_num_rows($result) > 0) 
 	{
-	    $GLOBALS['userID'] = $row->userID;	
+		while($row = mysqli_fetch_assoc($result))
+		{
+			$GLOBALS['userID'] = $row-["userID"];	
+		}
 	}
-	
 	//Insert Into Report Table
 	$mysql = 'INSERT INTO User_Report'.'(userID, userLati, userLongi, crimeType, crimeDesc, crimeImg, userAns1, userAns2, userAns3, userAns4)'.'VALUES ("'.$GLOBALS['userID'].'", "'.$userLati.'","'.$userLongi.'","'.$crimeType.'", "'.$crimeDesc.'","'.$crimeImg.'","'.$ansa1.'", "'.$ansa2.'","'.$ansa3.'","'.$ansa4.'")';
 	if (!mysqli_query($conn, $mysql)) 
