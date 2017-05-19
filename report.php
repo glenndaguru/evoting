@@ -1,4 +1,6 @@
 <?php
+	// Global
+	global $userID;
 	// Connection
 	$servername = "127.4.48.2";
 	$username = "adminD35M7Lk";
@@ -18,7 +20,7 @@
 	$ansa2 = $_POST["ansa2"];
 	$ansa3 = $_POST["ansa3"];
 	$ansa4 = $_POST["ansa4"];
-	global $userID;
+	
 	
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
@@ -40,7 +42,8 @@
 	}
 	
 	//Insert Into Report Table
-	$sql = "INSERT INTO User_Report (userID, userLati, userLongi, crimeType, crimeDesc, crimeImg, userAns1, userAns2, userAns3, userAns4) VALUES ('".$GLOBALS['userID']."', '".$userLati."','".$userLongi."','".$crimeType."','".$crimeDesc."','".$crimeImg."','".$ansa1."','".$ansa2."','".$ansa3."','".$ansa4."')";
+	//$sql = "INSERT INTO User_Report (userID, userLati, userLongi, crimeType, crimeDesc, crimeImg, userAns1, userAns2, userAns3, userAns4) VALUES ("'.$GLOBALS['userID'].'", '".$userLati."','".$userLongi."','".$crimeType."','".$crimeDesc."','".$crimeImg."','".$ansa1."','".$ansa2."','".$ansa3."','".$ansa4."')";
+	$sql = 'INSERT INTO User_Report'.'(userID, userLati, userLongi, crimeType, crimeDesc, crimeImg, userAns1, userAns2, userAns3, userAns4)'.'VALUES ("'.$GLOBALS['userID'].'", "'.$userLati.'","'.$userLongi.'","'.$crimeType.'", "'.$crimeDesc.'","'.$crimeImg.'","'.$ansa1.'", "'.$ansa2.'","'.$ansa3.'","'.$ansa4.'")';
 	if (!mysqli_query($the_connection, $sql)) 
 	{
 		echo "Error: " . $sql . "<br>" . mysqli_error($the_connection);
