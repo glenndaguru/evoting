@@ -1,6 +1,6 @@
 <?php
 	// Global
-	global $userID;
+	global $user;
 	// Connection
 	$servername = "127.4.48.2";
 	$username = "adminD35M7Lk";
@@ -36,12 +36,12 @@
 	{
 		while($row = mysqli_fetch_assoc($result))
 		{
-			$GLOBALS['userID'] = $row["UserID"];
+			$GLOBALS['user'] = $row["UserID"];
 		}
 	}
 	
 	//Insert Into Report Table
-	$mysql = 'INSERT INTO User_Report'.'(userID, userLati, userLongi, crimeType, crimeDesc, crimeImg, userAns1, userAns2, userAns3, userAns4)'.'VALUES ("'.$GLOBALS['userID'].'", "'.$userLati.'","'.$userLongi.'","'.$crimeType.'", "'.$crimeDesc.'","'.$crimeImg.'","'.$ansa1.'", "'.$ansa2.'","'.$ansa3.'","'.$ansa4.'")';
+	$mysql = 'INSERT INTO User_Report'.'(userID, userLati, userLongi, crimeType, crimeDesc, crimeImg, userAns1, userAns2, userAns3, userAns4)'.'VALUES ("'.$GLOBALS['user'].'", "'.$userLati.'","'.$userLongi.'","'.$crimeType.'", "'.$crimeDesc.'","'.$crimeImg.'","'.$ansa1.'", "'.$ansa2.'","'.$ansa3.'","'.$ansa4.'")';
 	if (!mysqli_query($conn, $mysql)) 
 	{
 		echo "Error: " . $mysql . "<br>" . mysqli_error($conn);
