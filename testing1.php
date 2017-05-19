@@ -20,7 +20,7 @@
 	// Selecting User ID, check if user exists
 	$sql = "SELECT userID, FROM User WHERE userEmail = '".$userEmail."' AND userPass ='".$userPass."'";
 	$results = mysqli_query($the_connection,$sql);
-	if(mysqli_num_rows($results) > 0)
+	if(mysqli_num_rows($results) != 0)
 	{
 		$myObj->result = 1;
 	}
@@ -31,6 +31,8 @@
 	
 	$myJobj = json_encode($myObj);
 	echo $myJobj."\n";
+	echo $userEmail."\n";
+	echo $userPass."\n";
 	
 	mysqli_close($conn);
 	
