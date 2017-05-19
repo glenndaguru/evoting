@@ -44,7 +44,7 @@
 	//Insert Into Report Table
 	//$sql = "INSERT INTO User_Report (userID, userLati, userLongi, crimeType, crimeDesc, crimeImg, userAns1, userAns2, userAns3, userAns4) VALUES ("'.$GLOBALS['userID'].'", '".$userLati."','".$userLongi."','".$crimeType."','".$crimeDesc."','".$crimeImg."','".$ansa1."','".$ansa2."','".$ansa3."','".$ansa4."')";
 	$sql = 'INSERT INTO User_Report'.'(userID, userLati, userLongi, crimeType, crimeDesc, crimeImg, userAns1, userAns2, userAns3, userAns4)'.'VALUES ("'.$GLOBALS['userID'].'", "'.$userLati.'","'.$userLongi.'","'.$crimeType.'", "'.$crimeDesc.'","'.$crimeImg.'","'.$ansa1.'", "'.$ansa2.'","'.$ansa3.'","'.$ansa4.'")';
-	if (!mysqli_query($the_connection, $sql)) 
+	if (!mysqli_query($conn, $sql)) 
 	{
 		echo "Error: " . $sql . "<br>" . mysqli_error($the_connection);
 	}
