@@ -30,7 +30,7 @@
 	} 
 	
 	//Fetch User ID
-	$sql = "SELECT * FROM User WHERE userEmail='".$userEmail."' AND userPass='".$userPass."'";
+	$sql = "SELECT UserID FROM User WHERE userEmail='".$userEmail."' AND userPass='".$userPass."'";
 	$result = mysqli_query($conn,$sql) or die("Error in $sql:" . mysqli_error($conn));	
 	if(mysqli_num_rows($result) > 0)
 	{
