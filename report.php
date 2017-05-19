@@ -30,17 +30,16 @@
 	} 
 	
 	//Fetch User ID
-	$GLOBALS['userID'] = 1;
-	/*
 	$sql = "SELECT * FROM User WHERE userEmail='".$userEmail."' AND userPass='".$userPass."'";
-	$result = mysqli_query($conn,$sql) or die("Error in $sql:" . mysqli_error($conn));
-	if (mysqli_num_rows($result) > 0) 
+	$result = mysqli_query($conn,$sql) or die("Error in $sql:" . mysqli_error($conn));	
+	if(mysqli_num_rows($result) > 0)
 	{
 		while($row = mysqli_fetch_assoc($result))
 		{
-			$GLOBALS['userID'] = $row->["userID"];	
+			$GLOBALS['userID'] = $row["UserID"];
 		}
-	}*/
+	}
+	
 	//Insert Into Report Table
 	$mysql = 'INSERT INTO User_Report'.'(userID, userLati, userLongi, crimeType, crimeDesc, crimeImg, userAns1, userAns2, userAns3, userAns4)'.'VALUES ("'.$GLOBALS['userID'].'", "'.$userLati.'","'.$userLongi.'","'.$crimeType.'", "'.$crimeDesc.'","'.$crimeImg.'","'.$ansa1.'", "'.$ansa2.'","'.$ansa3.'","'.$ansa4.'")';
 	if (!mysqli_query($conn, $mysql)) 
