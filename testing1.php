@@ -34,9 +34,6 @@
 	}
 	
 	$myJobj = json_encode($myObj);
-	echo $myJobj."\n";
-	echo $userEmail."\n";
-	echo $userPass."\n";
 	
 	mysqli_close($conn);
 	

@@ -2,7 +2,7 @@
 	// Data From App
 	$userEmail = $_POST["userEmail"];
 	$userPass = $_POST["userPass"];
-	
+
 	// Connection
 	$servername = "127.4.48.2";
 	$username = "adminD35M7Lk";
@@ -15,12 +15,12 @@
 	if ($conn->connect_error) 
 	{
 		die("Connection failed: " . $conn->connect_error);
-	} 
+	}
 	
 	// Selecting User ID, check if user exists
-	$sql = "SELECT userID, FROM User WHERE userEmail = '".$userEmail."' AND userPass ='".$userPass."'";
-	$results = mysqli_query($the_connection,$sql);
-	if(mysqli_num_rows($results) > 0)
+	$sql = "SELECT UserID FROM User WHERE userEmail='".$userEmail."' AND userPass='".$userPass."'";
+	$result = mysqli_query($conn,$sql) or die("Error in $sql:" . mysqli_error($conn));	
+	if(mysqli_num_rows($result) > 0)
 	{
 		$myObj->result = 1;
 	}
