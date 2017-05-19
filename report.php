@@ -30,7 +30,7 @@
 	// Global
 	global $user;
 	$sql = "SELECT * FROM User WHERE userEmail='".$userEmail."' AND userPass='".$userPass."'";
-	$result = mysqli_query($sql, $DBConnection) or die("Error in $sql:" . mysqli_error($DBConnection));
+	$result = mysqli_query($conn,$sql) or die("Error in $sql:" . mysqli_error($conn));
 	while($row = mysqli_fetch_object($result))
 	{
 		$GLOBAL['user'] = $row->UserID;
