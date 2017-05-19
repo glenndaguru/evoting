@@ -1,6 +1,4 @@
 <?php
-	// Global
-	global $user;
 	// Connection
 	$servername = "127.4.48.2";
 	$username = "adminD35M7Lk";
@@ -29,6 +27,16 @@
 		die("Connection failed: " . $conn->connect_error);
 	} 
 	
+	// Global
+	global $user;
+	$sql = "SELECT * FROM User WHERE userEmail='".$userEmail."' AND userPass='".$userPass."'";
+	$result = mysqli_query($sql, $DBConnection) or die("Error in $sql:" . mysqli_error($DBConnection));
+	while($row = mysqli_fetch_object($result))
+	{
+		$GLOBAL['user'] = $row->UserID;
+	}
+	
+	/*
 	//Fetch User ID
 	$sql = "SELECT UserID FROM User WHERE userEmail='".$userEmail."' AND userPass='".$userPass."'";
 	$result = mysqli_query($conn,$sql) or die("Error in $sql:" . mysqli_error($conn));	
@@ -39,6 +47,7 @@
 			$GLOBALS['user'] = $row["UserID"];
 		}
 	}
+	*/
 	
 	//Insert Into Report Table
 	$mysql = 'INSERT INTO User_Report'.'(userID, userLati, userLongi, crimeType, crimeDesc, crimeImg, userAns1, userAns2, userAns3, userAns4)'.'VALUES ("'.$GLOBALS['user'].'", "'.$userLati.'","'.$userLongi.'","'.$crimeType.'", "'.$crimeDesc.'","'.$crimeImg.'","'.$ansa1.'", "'.$ansa2.'","'.$ansa3.'","'.$ansa4.'")';
