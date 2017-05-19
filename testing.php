@@ -20,7 +20,7 @@
 		die("Connection failed: " . $conn->connect_error);
 	} 
 	
-	global $userID;
+	$sql = 'INSERT INTO User'.'(userName, userEmail, userPass, userNO)'.'VALUES ("'.$userName.'", "'.$userEmail.'","'.md5($userPass).'","'.$userNo.'")';
 	if (!mysqli_query($conn, $sql)) 
 	{
 		echo "Error: " . $sql . "<br>" . mysqli_error($conn);

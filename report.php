@@ -31,8 +31,8 @@
 	} 
 	
 	//Fetch User ID
-	$mysql = "SELECT userID, FROM User WHERE userEmail = '".$userEmail."' and userPass = '"$userPass."'";
-	$result = mysqli_query($conn,$mysql);
+	$sql = "SELECT UserID FROM User WHERE userEmail='".$userEmail."' AND userPass='".$userPass."'";
+	$result = mysqli_query($conn,$sql) or die("Error in $sql:" . mysqli_error($conn));
 	if (mysqli_num_rows($result) > 0) 
 	{
 		while($row =  mysqli_fetch_assoc($result)) 
@@ -43,14 +43,14 @@
 	
 	//Insert Into Report Table
 	//$sql = "INSERT INTO User_Report (userID, userLati, userLongi, crimeType, crimeDesc, crimeImg, userAns1, userAns2, userAns3, userAns4) VALUES ("'.$GLOBALS['userID'].'", '".$userLati."','".$userLongi."','".$crimeType."','".$crimeDesc."','".$crimeImg."','".$ansa1."','".$ansa2."','".$ansa3."','".$ansa4."')";
-	$sql = 'INSERT INTO User_Report'.'(userID, userLati, userLongi, crimeType, crimeDesc, crimeImg, userAns1, userAns2, userAns3, userAns4)'.'VALUES ("'.$GLOBALS['userID'].'", "'.$userLati.'","'.$userLongi.'","'.$crimeType.'", "'.$crimeDesc.'","'.$crimeImg.'","'.$ansa1.'", "'.$ansa2.'","'.$ansa3.'","'.$ansa4.'")';
-	if (!mysqli_query($conn, $sql)) 
+	$mysql = 'INSERT INTO User_Report'.'(userID, userLati, userLongi, crimeType, crimeDesc, crimeImg, userAns1, userAns2, userAns3, userAns4)'.'VALUES ("'.$GLOBALS['userID'].'", "'.$userLati.'","'.$userLongi.'","'.$crimeType.'", "'.$crimeDesc.'","'.$crimeImg.'","'.$ansa1.'", "'.$ansa2.'","'.$ansa3.'","'.$ansa4.'")';
+	if (!mysqli_query($conn, $mysql)) 
 	{
-		echo "Error: " . $sql . "<br>" . mysqli_error($the_connection);
+		echo "Error: " . $mysql . "<br>" . mysqli_error($conn);
 	}
 	else
 	{
-		$myObj->result = "Crime reported";
+		$myObj->result = "Crime Reported";
 	}
 	
 	$myJobj = json_encode($myObj);
