@@ -36,7 +36,7 @@
 	{
 		while($row = mysqli_fetch_assoc($result))
 		{
-			$GLOBALS['userID'] = $row-["userID"];	
+			$GLOBALS['userID'] = $row->["userID"];	
 		}
 	}
 	//Insert Into Report Table
