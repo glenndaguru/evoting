@@ -16,10 +16,7 @@
 	{
 		die("Connection failed: " . $conn->connect_error);
 	}
-	else
-	{
-		echo "Connected\n";
-	}
+	
 	
 	// Selecting User ID, check if user exists
 	$sql = "SELECT UserID FROM User WHERE userEmail='".$userEmail."' AND userPass='".$userPass."'";
