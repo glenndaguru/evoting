@@ -33,9 +33,9 @@
 	//Fetch User ID
 	$sql = "SELECT * FROM User WHERE userEmail='".$userEmail."' AND userPass='".$userPass."'";
 	$result = mysqli_query($conn,$sql) or die("Error in $sql:" . mysqli_error($conn));
-	if ($row = mysqli_fetch_object($result)) 
+	while($row = mysqli_fetch_object($result))
 	{
-		$GLOBALS['userID'] = $row->userID;	  
+	    $GLOBALS['userID'] = $row->userID;	
 	}
 	
 	//Insert Into Report Table
