@@ -31,7 +31,7 @@
 	} 
 	
 	//Fetch User ID
-	$sql = "SELECT UserID FROM User WHERE userEmail='".$userEmail."' AND userPass='".$userPass."'";
+	$sql = "SELECT * FROM User WHERE userEmail='".$userEmail."' AND userPass='".$userPass."'";
 	$result = mysqli_query($conn,$sql) or die("Error in $sql:" . mysqli_error($conn));
 	if ($row = mysqli_fetch_object($result)) 
 	{
@@ -39,7 +39,6 @@
 	}
 	
 	//Insert Into Report Table
-	//$sql = "INSERT INTO User_Report (userID, userLati, userLongi, crimeType, crimeDesc, crimeImg, userAns1, userAns2, userAns3, userAns4) VALUES ("'.$GLOBALS['userID'].'", '".$userLati."','".$userLongi."','".$crimeType."','".$crimeDesc."','".$crimeImg."','".$ansa1."','".$ansa2."','".$ansa3."','".$ansa4."')";
 	$mysql = 'INSERT INTO User_Report'.'(userID, userLati, userLongi, crimeType, crimeDesc, crimeImg, userAns1, userAns2, userAns3, userAns4)'.'VALUES ("'.$GLOBALS['userID'].'", "'.$userLati.'","'.$userLongi.'","'.$crimeType.'", "'.$crimeDesc.'","'.$crimeImg.'","'.$ansa1.'", "'.$ansa2.'","'.$ansa3.'","'.$ansa4.'")';
 	if (!mysqli_query($conn, $mysql)) 
 	{
