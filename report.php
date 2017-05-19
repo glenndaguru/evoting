@@ -6,8 +6,8 @@
 	$dbname = "crimereporter";
 	
 	// Data From App
-	$userEmail = "awe@cs.q";//$_POST["userEmail"];
-	$userPass = "1234";//$_POST["userPassword"];
+	$userEmail = $_POST["userEmail"];
+	$userPass = $_POST["userPassword"];
 	$userNo = "0128004527";//$_POST["userNo"];
 	$userLati= $_POST["lati"];
 	$userLongi= $_POST["longi"];
