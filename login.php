@@ -1,7 +1,7 @@
 <?php
 	// Data From App
 	$userEmail = $_POST["userEmail"];
-	$userPass = $_POST["userPassword"];
+	$userPass = $_POST["userPass"];
 	
 	// Connection
 	$servername = "127.4.48.2";

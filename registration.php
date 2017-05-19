@@ -2,7 +2,7 @@
 	// Data From App
 	$userName = $_POST["userName"];
 	$userEmail = $_POST["userEmail"];
-	$userPass = $_POST["userPassword"];
+	$userPass = $_POST["userPass"];
 	$userNo = $_POST["userNo"];
 
 	// Connection
