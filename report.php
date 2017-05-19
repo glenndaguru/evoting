@@ -35,7 +35,7 @@
 	$result = mysqli_query($conn,$sql) or die("Error in $sql:" . mysqli_error($conn));
 	while($row = mysqli_fetch_object($result))
 	{
-		$GLOBALS['user'] = $row->UserID;
+		$GLOBALS['user'] = $row->userID;
 	}
 	
 	//Insert Into Report Table
