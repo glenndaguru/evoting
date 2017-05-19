@@ -29,25 +29,14 @@
 	
 	// Global
 	global $user;
+	
+	//Fetch User ID
 	$sql = "SELECT * FROM User WHERE userEmail='".$userEmail."' AND userPass='".$userPass."'";
 	$result = mysqli_query($conn,$sql) or die("Error in $sql:" . mysqli_error($conn));
 	while($row = mysqli_fetch_object($result))
 	{
-		$GLOBAL['user'] = $row->UserID;
+		$GLOBALS['user'] = $row->UserID;
 	}
-	
-	/*
-	//Fetch User ID
-	$sql = "SELECT UserID FROM User WHERE userEmail='".$userEmail."' AND userPass='".$userPass."'";
-	$result = mysqli_query($conn,$sql) or die("Error in $sql:" . mysqli_error($conn));	
-	if(mysqli_num_rows($result) > 0)
-	{
-		while($row = mysqli_fetch_assoc($result))
-		{
-			$GLOBALS['user'] = $row["UserID"];
-		}
-	}
-	*/
 	
 	//Insert Into Report Table
 	$mysql = 'INSERT INTO User_Report'.'(userID, userLati, userLongi, crimeType, crimeDesc, crimeImg, userAns1, userAns2, userAns3, userAns4)'.'VALUES ("'.$GLOBALS['user'].'", "'.$userLati.'","'.$userLongi.'","'.$crimeType.'", "'.$crimeDesc.'","'.$crimeImg.'","'.$ansa1.'", "'.$ansa2.'","'.$ansa3.'","'.$ansa4.'")';
