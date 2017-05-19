@@ -7,7 +7,7 @@
 	
 	// Data From App
 	$userEmail = $_POST["userEmail"];
-	$userPass = $_POST["userPassword"];
+	$userPass = $_POST["userPass"];
 	$userLati= $_POST["lati"];
 	$userLongi= $_POST["longi"];
 	$crimeType= $_POST["type"];
