@@ -19,7 +19,7 @@
 	
 	// Selecting User ID, check if user exists
 	$sql = "SELECT userID, FROM User WHERE userEmail = '".$userEmail."' AND userPass ='".$userPass."'";
-	$results = mysqli_query($the_connection,$sql);
+	$result = mysqli_query($sql, $conn) or die("Error in $sql:" . mysqli_error($conn));	
 	if(mysqli_num_rows($results) != 0)
 	{
 		$myObj->result = 1;
