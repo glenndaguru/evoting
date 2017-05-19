@@ -20,7 +20,7 @@
 	} 
 	
 	// Insert Into User Table
-	$sql = 'INSERT INTO User'.'(userName, userEmail, userPass, userNo)'.'VALUES ("'.$userName.'", "'.$userEmail.'","'.md5($userPass).'","'.$userNo.'")';
+	$sql = 'INSERT INTO User'.'(userName, userEmail, userPass, userNo)'.'VALUES ("'.$userName.'", "'.$userEmail.'","'.$userPass.'","'.$userNo.'")';
 	if (!mysqli_query($conn, $sql)) 
 	{
 		echo "Error: " . $sql . "<br>" . mysqli_error($conn);

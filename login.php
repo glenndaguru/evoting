@@ -18,7 +18,7 @@
 	} 
 	
 	// Selecting User ID, check if user exists
-	$sql = "SELECT userID, FROM User WHERE userEmail = '".$userEmail."' and userPass = '".md5($userPass)."'";
+	$sql = "SELECT userID, FROM User WHERE userEmail = '".$userEmail."' and userPass = '".$userPass."'";
 	$results = mysqli_query($the_connection,$sql);
 	if(mysqli_num_rows($results) > 0)
 	{
