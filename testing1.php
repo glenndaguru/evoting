@@ -16,6 +16,10 @@
 	{
 		die("Connection failed: " . $conn->connect_error);
 	}
+	else
+	{
+		echo "Connected";
+	}
 	
 	
 	// Selecting User ID, check if user exists
