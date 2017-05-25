@@ -35,7 +35,7 @@
 	}
 	
 	$myJobj = json_encode($myObj);
-	
+	echo $myJobj."\n";
 	mysqli_close($conn);
 	
 
