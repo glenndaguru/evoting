@@ -31,7 +31,7 @@
 	global $user;
 	
 	//Fetch User ID
-	$sql = "SELECT * FROM User WHERE userEmail='".$userEmail."' AND userPass='".$userPass."'";
+	$sql = "SELECT * FROM User WHERE userEmail='".$userEmail."' AND userPass='".md5($userPass)."'";
 	$result = mysqli_query($conn,$sql) or die("Error in $sql:" . mysqli_error($conn));
 	while($row = mysqli_fetch_object($result))
 	{
