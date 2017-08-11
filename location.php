@@ -27,7 +27,8 @@
 	{
 		$rows[] = $row;
 	}
-	$myJobj = json_encode($myObj);
+	
+	$myJobj = json_encode(array('Locations'=> $rows));
 	echo $myJobj."\n";
 	
 	mysqli_close($conn);
