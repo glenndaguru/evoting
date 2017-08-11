@@ -16,11 +16,7 @@
 	{
 		die("Connection failed: " . $conn->connect_error);
 	}
-	else
-	{
-		echo "Connected";
-	}
-	
+
 	
 	//Insert Into Report Table
 	$mysql = 'INSERT INTO User_Panic'.'(panicLati, panicLongi)'.'VALUES ("'.$userLati.'","'.$userLongi.'")';
