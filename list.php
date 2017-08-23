@@ -16,11 +16,6 @@
 	{
 		die("Connection failed: " . $conn->connect_error);
 	}
-	else
-	{
-		echo "Connected";
-	}
-	
 	
 	// Select all crimes 
 	$rows = array();
