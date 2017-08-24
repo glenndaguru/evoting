@@ -19,7 +19,8 @@
 	
 	// Select all crimes 
 	$rows = array();
-	$sql = "SELECT * FROM User_Report";
+	$sql = "SELECT * 
+			FROM User_Report";
 	$result = mysqli_query($conn,$sql) or die("Error in $sql:" . mysqli_error($conn));	
 	
 	while($row = mysqli_fetch_assoc($result)) 
@@ -35,3 +36,7 @@
 	
 
 ?>
+
+SELECT R.*,U.userName
+FROM user_report R, user u
+WHERE u.userID = r.userID;

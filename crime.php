@@ -18,7 +18,10 @@
 	
 	// Select all crimes 
 	$rows = array();
-	$sql = "SELECT * FROM User_Report WHERE repo_no ='".$crimeID."'";
+	$sql = "SELECT r.*, u.userName
+			FROM User_Report r, User u
+			WHERE r.userID = u.userID
+			AND r.repo_no ='".$crimeID."'";
 	$result = mysqli_query($conn,$sql) or die("Error in $sql:" . mysqli_error($conn));	
 	
 	while($row = mysqli_fetch_assoc($result)) 
