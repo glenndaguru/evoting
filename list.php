@@ -37,6 +37,3 @@
 
 ?>
 
-SELECT R.*,U.userName
-FROM user_report R, user u
-WHERE u.userID = r.userID;
