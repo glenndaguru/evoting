@@ -18,7 +18,7 @@
 	
 	// Select all crimes 
 	$rows = array();
-	$sql = "SELECT r.*, u.userName
+	$sql = "SELECT r.*, u.userNo
 			FROM User_Report r, User u
 			WHERE r.userID = u.userID
 			AND r.repo_no ='".$crimeID."'";
