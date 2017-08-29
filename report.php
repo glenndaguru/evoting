@@ -41,7 +41,7 @@
 	$theDate = date("Y-m-d") + date("h:i:sa");
 	
 	//Insert Into Report Table
-	$mysql = 'INSERT INTO User_Report'.'(userID, userLati, userLongi, crimeType, crimeDesc, crimeImg, crimeDate, userAns1, userAns2, userAns3, userAns4)'.'VALUES ("'.$GLOBALS['user'].'", "'.$userLati.'","'.$userLongi.'","'.$crimeType.'", "'.$crimeDesc.'","'.$crimeImg.'","'.$theDate.'","'.$ansa1.'", "'.$ansa2.'","'.$ansa3.'","'.$ansa4.'")';
+	$mysql = 'INSERT INTO User_Report'.'(userID, userLati, userLongi, crimeType, crimeDesc, crimeImg, crimeDate, userAns1, userAns2, userAns3, userAns4)'.'VALUES ("'.$GLOBALS['user'].'", "'.$userLati.'","'.$userLongi.'","'.$crimeType.'", "'.$crimeDesc.'","'.$crimeImg.'","'.$GLOBALS['theDate'].'","'.$ansa1.'", "'.$ansa2.'","'.$ansa3.'","'.$ansa4.'")';
 	if (!mysqli_query($conn, $mysql)) 
 	{
 		echo "Error: " . $mysql . "<br>" . mysqli_error($conn);
