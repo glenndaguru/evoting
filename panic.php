@@ -1,5 +1,7 @@
 <?php
 	// Data From App
+	$userEmail = $_POST["userEmail"];
+	$userPass = $_POST["userPass"];
 	$userLati= $_POST["lati"];
 	$userLongi= $_POST["longi"];
 	
@@ -16,10 +18,20 @@
 	{
 		die("Connection failed: " . $conn->connect_error);
 	}
-
 	
-	//Insert Into Report Table
-	$mysql = 'INSERT INTO User_Panic'.'(panicLati, panicLongi)'.'VALUES ("'.$userLati.'","'.$userLongi.'")';
+	// Global
+	global $user;
+	
+	//Fetch User ID
+	$sql = "SELECT * FROM User WHERE userEmail='".$userEmail."' AND userPass='".md5($userPass)."'";
+	$result = mysqli_query($conn,$sql) or die("Error in $sql:" . mysqli_error($conn));
+	while($row = mysqli_fetch_object($result))
+	{
+		$GLOBALS['user'] = $row->userID;
+	}
+	
+	//Insert Into Panic Table
+	$mysql = 'INSERT INTO User_Panic'.'(userID,panicLati, panicLongi)'.'VALUES ("'.$GLOBALS['user'].'","'.$userLati.'","'.$userLongi.'")';
 	if (!mysqli_query($conn, $mysql)) 
 	{
 		echo "Error: " . $mysql . "<br>" . mysqli_error($conn);

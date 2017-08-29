@@ -1,5 +1,7 @@
 <?php
 	// Data From App
+	$userEmail = $_POST["userEmail"];
+	$userPass = $_POST["userPass"];
 	$userLati= $_POST["lati"];
 	$userLongi= $_POST["longi"];
 	
@@ -20,7 +22,9 @@
 	
 	// List all locations
 	$rows = array();
-	$sql = "SELECT * FROM User_Panic";
+	$sql = "SELECT p.*, u.userNo as num 
+			FROM User_Panic p, User u
+			WHERE p.userID = u.userID";
 	$result = mysqli_query($conn,$sql) or die("Error in $sql:" . mysqli_error($conn));	
 	
 	while($row = mysqli_fetch_assoc($result)) 
