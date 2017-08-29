@@ -18,7 +18,6 @@
 	$ansa3 = $_POST["ansa3"];
 	$ansa4 = $_POST["ansa4"];
 	
-	
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	
